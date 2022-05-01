@@ -17,7 +17,7 @@ for idx = 1:1000
     end
     R = bandit_non_stationary(A);
     N(A) = N(A) + 1;
-    Q_function(A) = Q_function(A) + (1 / idx) * (R - Q_function(A));
+    Q_function(A) = Q_function(A) + (1 / N(A)) * (R - Q_function(A));
     sum = sum + R;
     Rn(idx) = sum/idx;
 end
