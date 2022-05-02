@@ -21,9 +21,9 @@ for iter = 1:1000
     % R = binaryBanditB(A)
     % R = binaryBanditA(A)
     N(A)= N(A)+1;
-    Q_function(A)= Q_function(A)+ alpha*(R - Q_function(A));
+    Q_function(A)= Q_function(A)+ (1 / N(A)) * (R - Q_function(A));
     sum = sum + R;
-    Rn(iter) = sum / iter;
+    Rn(iter) = sum / N(A);
 end
 plot(itr,Rn);
 title('Average rewards vs no of iteration graph for binaryBanditA')
